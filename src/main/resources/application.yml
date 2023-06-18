@@ -1,0 +1,40 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  datasource:
+    url: d
+    username: yjlee
+    password: mtsm2752
+
+  h2:
+    console:
+      enabled: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 479024864916-jqnp0v5b61i0743eimm43qmvimd756sq.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
+jwt:
+  issuer: leezerozoo@gmail.com
+  secret_key: study-springboot
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "test"
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
